@@ -1,26 +1,24 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+
+import "./global.css";
+
+import Routes from "./routes";
+
+//JSX (JavaScript XML -> HTML dentro do java)
+/**
+ * counter = valor , setCounter = valor que sobrepõe o valor do counter
+ * usar estado -> useState(0) no lugar de uma variável quando for ser alterada sem recarregar a tela
+ *
+ * const [counter, setCounter] = useState(0);
+ * function increment() {
+ *  setCounter(counter + 1);
+ * }
+ *
+ * <button onClick={increment}>Incrementar</button>
+ */
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload..
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <Routes />;
 }
 
 export default App;
