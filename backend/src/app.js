@@ -1,5 +1,6 @@
 const express = require("express"); //importando o módulo express para a variável express
 const cors = require("cors");
+const { errors } = require("celebrate");
 const routes = require("./routes"); //importando o arquivo de rotas
 
 const app = express(); //variável para armazenar a aplicação
@@ -7,6 +8,8 @@ const app = express(); //variável para armazenar a aplicação
 app.use(cors()); //depois fica app.use(cors({ origin: 'http://meuapp.com' })); para limitar o acesso a essa página, caso contrário qualquer página frontend acessa
 app.use(express.json()); //requisições serão por JSON
 app.use(routes); //ativando o uso das rotas
+
+app.use(errors());
 
 /**
  * Métodos HTTP:
@@ -37,7 +40,9 @@ app.use(routes); //ativando o uso das rotas
  * Query Builder: table('users').select('*').where() -> tabela,todos os campos, filtro
  */
 
-app.listen(3333); //definindo a porta localhost:3333
+module.exports = app;
+
+//app.listen(3333); //definindo a porta localhost:3333 , foi modificado para o server.js depois da implementação dos testes
 
 /**
  * teste de commit
